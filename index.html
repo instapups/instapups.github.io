@@ -1,16 +1,70 @@
 <html>
 
 <head>
-<title>InstaPups</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "script.js"></script>
 
 <style>
 
-#header{
+ul {
+    list-style-type: none;
+    margin: 5%;
+    padding: 0;
+    width: 90%;
+    height: 90%;
+    background-color: #f1f1f1;
+}
+
+li div {
+    display: block;
+    color: #000;
+    padding: 5% 10%;
+    text-decoration: none;
+}
+
+li div.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li div:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  float: right;
+  margin: 2%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#header {
 	height: 15%;
 	background-color: brown;
 }
 
-#navigation{
+#navigation {
 	width: 20%;
 	height: 80%;
 	float: left;
@@ -23,11 +77,24 @@
 	height: 80%;
 	float: right;
 	margin-top: 0.8%;
+	background-color: grey;
+}
+
+#image {
+	width: 50%;
+	height: 80%;
+	margin: auto;
+	margin-top: 5%;
 	background-color: black;
+	background-image: url("/home/prrateekk/github/instapups.github.io/NITJ.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
 }
 
 </style>
 
+<title>InstaPups</title>
 </head>
 
 <body>
@@ -36,11 +103,28 @@
 </div>
 
 <div id = "navigation">
+<ul>
+  <li><div class="active" href="#home">Home</div></li>
+  <li><div href="#news">News</div></li>
+  <li><div href="#contact">Contact</div></li>
+  <li><div href="#about">About</div></li>
+</ul>
 </div>
 
 <div id = "content">
 
+<div class="upload-btn-wrapper">
+  <button class="btn">Upload a file</button>
+  <input type="file" name="myfile" />
 </div>
+
+<div id = "image">
+
+</div>
+
+</div>
+
+<button onclick = "showImage()">LOL</button>
 
 </body>
 
