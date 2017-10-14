@@ -42,10 +42,10 @@ li div:hover:not(.active) {
 }
 
 .btn {
-  border: 2px solid gray;
+  border: 1% solid gray;
   color: gray;
   background-color: white;
-  padding: 8px 16px;
+  padding: 2% 4%;
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
@@ -115,7 +115,6 @@ a:hover {
 	margin: auto;
 	margin-top: 5%;
 	background-color: black;
-	background-image: url("/home/prrateekk/github/instapups.github.io/NITJ.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
@@ -133,36 +132,34 @@ a:hover {
 <title>InstaPups</title>
 </head>
 
-<body>
+<body onload = "selectCategory('Memes')"">
 
 <div id = "header">
 </div>
 
 <div id = "navigation">
 <ul>
-  <li><div class="active" href="#home">Home</div></li>
-  <li><div href="#news">News</div></li>
-  <li><div href="#contact">Contact</div></li>
-  <li><div href="#about">About</div></li>
+	<li><div class="active"  onclick="selectCategory('Memes')" id="Memes">Memes</div></li>
+    <li><div id="Cute" onclick="selectCategory('Cute')">Cute</div></li>
 </ul>
 </div>
 
 <div id = "content">
 
 <div class="upload-btn-wrapper">
-  <button class="btn">Upload a file</button>
-  <input type="file" name="myfile" />
+    <button class="btn">Upload a file</button>
+    <input type="file" name="myfile" id = "myfile"/>
 </div>
 
 <div id = "image-container">
-	<a href="#" class="previous round">&#8249;</a>
+	<a href="javascript:previousImage()" class="previous round">&#8249;</a>
 	<div id = "image"></div>
-	<a href="#" class="next round">&#8250;</a>
+	<a href="javascript:nextImage()" class="next round">&#8250;</a>
 </div>
 
 </div>
 
-<button onclick = "showImage()">LOL</button>
+<button onclick = "uploadFile()">upload</button>
 
 </body>
 
