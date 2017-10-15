@@ -1,6 +1,6 @@
 var cat_list = ["Memes", "Cute"];
 var img_list = [];
-var selectedCategory = "Memes";
+var selectedCategory = "Cute";
 var pointer = -1;
 var token = 'ymc-ZuIq4fAAAAAAAAAAGMoB-SL0uASSbT_dcWA_vntnglW_DOzRkMelLRewDIom';
 
