@@ -11,9 +11,11 @@ function download(path) {
 	    if (xhr.readyState === 4 && xhr.status === 200) {
 	        var imageUrl = (window.URL || window.webkitURL).createObjectURL(xhr.response);
 	        document.getElementById("image").style.backgroundImage = "url(" + imageUrl + ")";
+	        document.getElementById("image").style.filter = "blur(0px)";
 	        console.log("url('"+imageUrl+"')");
 	    }
 	};
+	document.getElementById("image").style.filter = "blur(2px)";
 	xhr.open('POST', 'https://content.dropboxapi.com/2/files/download');
 	xhr.setRequestHeader('Authorization', 'Bearer ' + token);
 	xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({ path: path }));
@@ -92,3 +94,16 @@ function selectCategory(catg) {
 	selectedCategory = catg;
 	list_folder();
 }
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            console.log('left');
+            previousImage();
+            break;
+        case 39:
+            console.log('right');
+            nextImage();
+            break;
+    }
+};
