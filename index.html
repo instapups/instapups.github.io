@@ -13,28 +13,28 @@
 
 ul {
     list-style-type: none;
-    margin: 5%;
+    margin-top: 1%;
     padding: 0;
-    width: 90%;
-    height: 90%;
-    background-color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    background-color: #353a40;
 }
 
 li div {
     display: block;
-    color: #000;
+    color: #9ea5ae;
     padding: 5% 10%;
     text-decoration: none;
 }
 
-li div.active {
-    background-color: #4CAF50;
-    color: white;
+li div.active-nav {
+    background-color: #353a40;
+    color: #fff;
 }
 
 li div:hover:not(.active) {
-    background-color: #555;
-    color: white;
+    color: #fff;
+    cursor: pointer;
 }
 
 .upload-btn-wrapper {
@@ -70,7 +70,6 @@ a {
 }
 
 a:hover {
-    background-color: #ddd;
     color: black;
 }
 
@@ -94,49 +93,51 @@ a:hover {
 
 #header {
 	height: 15%;
-	background-color: brown;
+	background-color: #e6e6e6;
 }
 
 #navigation {
 	width: 20%;
-	height: 80%;
+	height: 89%;
 	float: left;
-	margin-top: 0.8%;
-	background-color: yellow;
+	background-color: #e6e6e6;
 }
 
 #content {
-	width: 79%;
-	height: 80%;
+	width: 80%;
+	height: 90%;
 	float: right;
-	margin-top: 0.8%;
-	background-color: grey;
+	background-color: #e6e6e6;
 }
 
 #image-container {
   margin: auto;
   margin-top: 5%;
-  background-color: #666666;
+  background-color: #d9d9d9;
   width: 60%;
   height: 80%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 #image {
   width: 70%;
   height: 100%;
   margin: auto;
-  background-color: #666666;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 }
 
 .carousel-control-prev:hover {
-	background-color: #666666;
+	background-color: #d9d9d9;
 }
 
 .carousel-control-next:hover {
-	background-color: #666666;
+	background-color: #d9d9d9;
+}
+
+.list-group-item list-group-item-action {
+	background-color: #262626;
 }
 
 </style>
@@ -146,20 +147,50 @@ a:hover {
 
 <body onload = "selectCategory('Memes')"">
 
-<div id = "header">
+<div>
+<div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">InstaPups</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
 </div>
+
+
 
 <div id = "navigation">
 <ul>
 	<li><div class="active"  onclick="selectCategory('Memes')" id="Memes">Memes</div></li>
     <li><div id="Cute" onclick="selectCategory('Cute')">Cute</div></li>
 </ul>
+<!-- <div id="list-example" class="list-group">
+  <div class = "active-nav" id="Memes">
+  <a class="list-group-item list-group-item-action" href="javascript: selectCategory('Memes')">Memes</a>
+  </div>
+  <div id="Cute">
+  <a class="list-group-item list-group-item-action" href="javascript: selectCategory('Cute')">Cute</a>
+  </div>
+</div> -->
 </div>
+
+
 
 <div id = "content">
 
 <div class="upload-btn-wrapper">
-    <button class="btn">Upload a file</button>
+    <!-- <button class="btn">Upload a file</button> -->
     <input type="file" name="myfile" id = "myfile"/>
 </div>
 
@@ -183,7 +214,7 @@ a:hover {
 
 </div>
 
-<button onclick = "uploadFile()">upload</button>
+<!-- <button onclick = "uploadFile()">upload</button> -->
 
 </body>
 

@@ -89,7 +89,7 @@ function selectCategory(catg) {
 	for (var i=0;i<cat_list.length;i++) {
 		document.getElementById(cat_list[i]).className = "";
 	}
-	document.getElementById(catg).className = "Active";
+	document.getElementById(catg).className = "active-nav";
 	pointer = -1;
 	selectedCategory = catg;
 	list_folder();
